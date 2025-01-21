@@ -1,0 +1,152 @@
+= Bank Account Service
+Ademar Porto <ademar@outlook.com.br>
+v1.0, 2025-January-21
+:toc:
+:toclevels: 5
+
+== Introduction
+Introduction
+
+This service provides the backend APIs for the modernized Gemini Bank account opening system.
+It enables customers to initiate and manage account opening requests through a user-friendly
+and flexible interface.
+
+===== Key Features:
+
+- Initiate Account Requests: Customers can initiate account opening requests by providing basic KYC information (name, address, date of birth).
+- Flexible Workflow: Customers can pause and resume the request process at their convenience.
+- Data Validation: All mandatory fields are validated during the onboarding phase to ensure data quality and minimize errors.
+- Seamless Experience: Customers receive direct feedback throughout the request process, enhancing their overall experience.
+- Robust Backend: The service provides a stable and scalable foundation for the account opening system, supporting a high volume of requests.
+
+
+== Stack
+
+- Java 21
+- Spring Boot 3
+- Flyway
+- PostgresSQL
+- Docker
+- OpenAPI specification
+- Lombok
+
+== Setup
+
+=== Requirement
+
+===== Java JDK
+
+You will need at least the Java 21 installed to build and run the application.
+
+=== Build the application
+
+To build the service, you can either use a locally installed version of maven or you can use the provided maven wrapper.
+Depending on your choice, replace the command with the following:
+
+* `mvn` for using maven
+* `./mvnw` for the mavenwrapper on *nix environments
+* `./mvnw.cmd` for the mavenwrapper on Windows
+
+=== Useful maven commands
+This sub-section will describe a few handy maven commands, for a full overview of the maven lifecycle please refer to the [maven lifecycle page](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html).
+
+Compiling the project is done with the following maven command:
+[source,shell script]
+----
+mvn clean compile
+----
+This will compile the project but none of the tests will be run.
+
+Running the tests can be done with the following maven command:
+[source,shell script]
+----
+mvn clean test
+----
+This will also recompile the project if any changes have been detected.
+
+To package the project into a bootable jar file, use the following command:
+[source,shell script]
+----
+mvn clean package
+----
+This will also compile and run tests for the project if any changes have been detected.
+
+=== Running the service locally
+==== External Dependencies
+To be able to run this project, you need to be able to connect to a Postgres database.
+This can be achieved by running Postgres and setting the following spring profile: `local`.
+
+=== Running Postgres
+I've created a `docker-compose.yml` to make running Postgres easier.
+To use the docker-compose file to run, you need to have `docker` installed on your machine.
+If you want to start up Postgres through the docker-compose file use the following command from the root of the project:
+
+From the root of this project you can then run the following command:
+
+[source,shell script]
+----
+docker-compose -f docker-compose.yml up -d
+
+----
+or
+[source,shell script]
+----
+
+
+docker compose -f docker-compose.yml up -d
+----
+
+=== Running the application
+After the project has been packaged and Postgres is running, the service can be run by executing the resulting `bank-account-service.jar`
+
+Expecting that you have a JRE installed, this can be done with the following command:
+
+* Please provide the absolute path from your application yml,
+in the command below I'm using the path from my local file.
+
+[source,shell script]
+----
+
+java -jar ./target/bank-account-service.jar --spring.config.location=file:////Users/ademarporto/Documents/Projects/bank-account-service/src/main/resources/application.yml
+
+----
+
+* Note, this will run the application using local profile and application will run on port ``8080``.
+
+== Endpoint
+
+=== OpenAPI specification
+----
+http://localhost:8080/swagger-ui/index.html#/
+----
+
+=== Actuator endpoint
+
+You can check the application health with this endpoint:
+
+[source,shell script]
+----
+http://localhost:8080/actuator/health      [GET]
+----
+
+== Docker
+This project contains a Dockerfile to generate the docker images.
+
+== Security
+For simplicity no authentication and authorization is performed, all requests are permitted, for production
+is recommended to have a connection to a provider to validate the authenticity of the requests and validate
+if the users are authorized to perform the action.
+
+== Postman
+In the root of this project you can find the postman collections containing the requests for all endpoints
+covering different scenarios.
+
+== Future Features
+- Integration with a monitoring provider (the application already provides the metrics via the micrometer library).
+- Implement the endpoints to approve and reject the account requests.
+- Integration with sonar for code quality.
+- Integration with Sysdig for vulnerabilities check.
+- Create the k8s manifests.
+- Integrate with a CD tool such as Argo, Jenkins or Gitlab.
+- Integration with an artifact repository such as Nexus, JFrog, and others.
+

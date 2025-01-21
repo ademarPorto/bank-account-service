@@ -1,0 +1,12 @@
+components:
+  schemas:
+    AccountStatus:
+      title: Account Status
+      description: The Account Status.
+      type: string
+      enum:
+        - IN_PROGRESS
+        - PAUSED
+        - SUBMITTED
+        - APPROVED
+        - REJECTED

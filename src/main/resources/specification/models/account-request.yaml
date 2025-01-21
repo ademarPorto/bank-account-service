@@ -1,0 +1,9 @@
+components:
+  schemas:
+    AccountRequest:
+      type: object
+      properties:
+        account:
+          $ref: "account.yaml#/components/schemas/Account"
+      required:
+        - account

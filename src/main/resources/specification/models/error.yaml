@@ -1,0 +1,13 @@
+components:
+  schemas:
+    Error:
+      properties:
+        code:
+          description: A code which uniquely identifies the type of error that occurred
+          type: string
+        message:
+          description: A human readable description of the error that occurred
+          type: string
+      required:
+        - code
+        - message

@@ -1,0 +1,10 @@
+components:
+  schemas:
+    AccountType:
+      title: Account Type
+      description: The Account's type.
+      type: string
+      enum:
+        - SAVINGS
+        - CURRENT
+        - INVESTMENT

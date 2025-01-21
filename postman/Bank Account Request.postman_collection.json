@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "967e8b03-946e-48bc-8ba7-23f76a0444ab",
+		"name": "Bank Account Request",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8018930"
+	},
+	"item": [
+		{
+			"name": "Create Account Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Account Paused",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_status\" : \"PAUSED\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid Account Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid Account Type",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid Post Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid House Number",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Street Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid Address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid Date Of Birth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"name\" : \"Pieter\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account Request Invalid Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"date_of_birth\" : \"1986-05-11\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"80\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"CURRENT\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : true,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"request_id\" : \"49a502fe-4b6b-45d8-ac6d-9c91c757e0bf\",\n        \"name\" : \"Pieter Oliver\",\n        \"date_of_birth\" : \"1986-05-10\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"83\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"SAVINGS\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : false,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account Request Invalid Operation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"request_id\" : \"49a502fe-4b6b-45d8-ac6d-9c91c757e0bf\",\n        \"name\" : \"Pieter Oliver\",\n        \"date_of_birth\" : \"1986-05-10\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"83\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"SAVINGS\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : false,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account Request Account Already Submitted",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"request_id\" : \"49a502fe-4b6b-45d8-ac6d-9c91c757e0bf\",\n        \"name\" : \"Pieter Oliver\",\n        \"date_of_birth\" : \"1986-05-10\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"83\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"SAVINGS\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : false,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account Request Account Not Found",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\" : {\n        \"request_id\" : \"49a502fe-4b6b-45d8-ac6d-9c91c757e0bf\",\n        \"name\" : \"Pieter Oliver\",\n        \"date_of_birth\" : \"1986-05-10\",\n        \"id_document\" : \"123456NL\",\n        \"address\" : {\n            \"street_name\" : \"street name\",\n            \"house_number\" : \"83\",\n            \"post_code\" : \"1338 AB\",\n            \"city\" : \"Almere\"\n        },\n        \"account_type\" : \"SAVINGS\",\n        \"starting_balance\":  1.500,\n        \"monthly_salary\" : 6000,\n        \"interested_in_other_products\" : false,\n        \"email\" : \"pieter@outlook.com\",\n        \"account_status\" : \"IN_PROGRESS\" \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Account Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests/:request-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests",
+						":request-id"
+					],
+					"variable": [
+						{
+							"key": "request-id",
+							"value": "95538fe2-31cf-414b-89e2-879609e9812a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Account Request Account Not Found",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests/:request-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests",
+						":request-id"
+					],
+					"variable": [
+						{
+							"key": "request-id",
+							"value": "95538fe2-31cf-414b-89e2-879609e9812a"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests/:request-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests",
+						":request-id"
+					],
+					"variable": [
+						{
+							"key": "request-id",
+							"value": "49a502fe-4b6b-45d8-ac6d-9c91c757e0bf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Account Request Account Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests/:request-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests",
+						":request-id"
+					],
+					"variable": [
+						{
+							"key": "request-id",
+							"value": "49a502fe-4b6b-45d8-ac6d-9c91c757e0bf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Account Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests/:request-id/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests",
+						":request-id",
+						"submit"
+					],
+					"variable": [
+						{
+							"key": "request-id",
+							"value": "49a502fe-4b6b-45d8-ac6d-9c91c757e0bf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Account Request Account Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/account-requests/:request-id/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"account-requests",
+						":request-id",
+						"submit"
+					],
+					"variable": [
+						{
+							"key": "request-id",
+							"value": "49a502fe-4b6b-45d8-ac6d-9c91c757e0bf"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

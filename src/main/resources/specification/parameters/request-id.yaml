@@ -1,0 +1,7 @@
+name: request-id
+in: path
+required: true
+schema:
+  type: string
+  format: uuid
+description: The request id.

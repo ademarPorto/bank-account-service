@@ -1,0 +1,34 @@
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        street_name:
+          description: The customer's street name.
+          type: string
+          #Pattern used to validate empty strings.
+          pattern: '^(?!\s*$).+'
+          example: 'Street Name'
+        house_number:
+          description: The customer's house number.
+          type: string
+          #Pattern used to validate empty strings.
+          pattern: '^(?!\s*$).+'
+          example: '82'
+        post_code:
+          description: The customer's post code.
+          type: string
+          #Pattern used to validate the post code.
+          pattern: '^\d{4} [A-Z]{2}$'
+          example: '1338 AB'
+        city:
+          description: The customer's city.
+          type: string
+          #Pattern used to validate empty strings.
+          pattern: '^(?!\s*$).+'
+          example: 'Almere'
+      required:
+        - street_name
+        - house_number
+        - post_code
+        - city

@@ -1,0 +1,57 @@
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        request_id:
+          description: A unique ID for the request account
+          type: string
+          format: uuid
+          example: '95538fe2-31cf-414b-89e2-879609e9812a'
+        name:
+          description: The customer's name.
+          type: string
+          #Pattern used to validate empty strings.
+          pattern: '^(?!\s*$).+'
+          examples: 'Pieter'
+        date_of_birth:
+          description: The customer's date of birth.
+          type: string
+          format: date
+          examples: '1986-05-11'
+        id_document:
+          description: The customer's document id.
+          type: string
+          #Pattern used to validate empty strings.
+          pattern: '^(?!\s*$).+'
+          examples: '123456NL'
+        address:
+          $ref: "address.yaml#/components/schemas/Address"
+        account_type:
+          $ref: "account-type.yaml#/components/schemas/AccountType"
+        starting_balance:
+          description: The Starting Balance.
+          type: number
+          minimum: 0
+        monthly_salary:
+          description: The Monthly Salary.
+          type: number
+          minimum: 0
+        interested_in_other_products:
+          description: If the customer is interested in other products.
+          type: boolean
+          example: true
+        email:
+          description: The customer's email.
+          type: string
+          format: email
+          #Pattern used to validate empty strings.
+          pattern: '^(?!\s*$).+'
+          example: 'pieter@outlook.com'
+        account_status:
+          $ref: "account-status.yaml#/components/schemas/AccountStatus"
+      required:
+        - name
+        - address
+        - date_of_birth
+        - account_status

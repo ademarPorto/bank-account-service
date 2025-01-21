@@ -1,0 +1,7 @@
+components:
+  schemas:
+    AccountResponse:
+      type: object
+      properties:
+        account:
+          $ref: "account.yaml#/components/schemas/Account"

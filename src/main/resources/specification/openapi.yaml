@@ -1,0 +1,265 @@
+openapi: '3.0.3'
+info:
+  title: Bank Account Service Spec
+  description: Bank Account Service Specification
+  version: "1.0.0"
+  contact:
+    name: Ademar Porto
+    email: ademar@outlook.com.br
+servers:
+  - url: http://localhost:8080
+
+paths:
+  /v1/account-requests:
+    post:
+      operationId: "create-account-request"
+      tags:
+        - account-request-controller
+      description: Endpoint to create an account request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "models/account-request.yaml#/components/schemas/AccountRequest"
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "./models/account-response.yaml#/components/schemas/AccountResponse"
+        400:
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        401:
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        403:
+          description: Forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        404:
+          description: Not Found.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        500:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        503:
+          description: Service Unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+    put:
+      operationId: "update-account-request"
+      tags:
+        - account-request-controller
+      description: Endpoint to update an account request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "./models/account-request.yaml#/components/schemas/AccountRequest"
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "./models/account-response.yaml#/components/schemas/AccountResponse"
+        400:
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        401:
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        403:
+          description: Forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        404:
+          description: Not Found.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        500:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        503:
+          description: Service Unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+  /v1/account-requests/{request-id}:
+    get:
+      operationId: "get-account-request-by-id"
+      tags:
+        - account-request-controller
+      description: Endpoint to get an account request.
+      parameters:
+        - $ref: ./parameters/request-id.yaml
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "./models/account-response.yaml#/components/schemas/AccountResponse"
+        400:
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        401:
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        403:
+          description: Forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        404:
+          description: Not Found.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        500:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        503:
+          description: Service Unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+    delete:
+      operationId: "delete-account-request"
+      tags:
+        - account-request-controller
+      description: Endpoint to delete an account request.
+      parameters:
+        - $ref: ./parameters/request-id.yaml
+      responses:
+        204:
+          description: Response representing that the account request was successfully deleted.
+        400:
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        401:
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        403:
+          description: Forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        404:
+          description: Not Found.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        500:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        503:
+          description: Service Unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+  /v1/account-requests/{request-id}/submit:
+    get:
+      operationId: "submit-account-request"
+      tags:
+        - account-request-controller
+      description: Endpoint to submit an account request.
+      parameters:
+        - $ref: ./parameters/request-id.yaml
+      responses:
+        204:
+          description: Response representing that the account request was successfully submitted.
+        400:
+          description: Bad request.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        401:
+          description: Unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        403:
+          description: Forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        404:
+          description: Not Found.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        500:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
+        503:
+          description: Service Unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: "./models/error.yaml#/components/schemas/Error"
