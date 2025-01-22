@@ -140,7 +140,7 @@ In the root of this project you can find the postman collections containing the 
 covering different scenarios.
 
 == Future Features
-- implement authentication and authorization.
+- Implement authentication and authorization.
 - Integration with a monitoring provider (the application already provides the metrics via the micrometer library).
 - Implement the endpoints to approve and reject the account requests.
 - Integration with sonar for code quality.
