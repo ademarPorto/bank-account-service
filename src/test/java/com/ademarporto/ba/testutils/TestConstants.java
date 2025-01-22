@@ -11,7 +11,6 @@ public class TestConstants {
   private TestConstants() {}
 
   public static final UUID REQUEST_ID = UUID.fromString("2b31cf3c-1d3f-41d1-b857-0b69ee816603");
-  public static final UUID REQUEST_ID_2 = UUID.fromString("83a73c9f-c57b-4297-b677-dd58655ee291");
   public static final String CUSTOMER_NAME = "test";
   public static final String ID_DOCUMENT = "ID_DOCUMENT";
   public static final AccountType ACCOUNT_TYPE = AccountType.CURRENT;
