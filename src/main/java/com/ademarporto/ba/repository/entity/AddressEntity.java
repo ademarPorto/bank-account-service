@@ -6,8 +6,8 @@ import lombok.Data;
 @Data
 @Embeddable
 public class AddressEntity {
-    private String streetName;
-    private String houseNumber;
-    private String postCode;
-    private String city;
+  private String streetName;
+  private String houseNumber;
+  private String postCode;
+  private String city;
 }

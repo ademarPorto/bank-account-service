@@ -1,19 +1,17 @@
 package com.ademarporto.ba.service;
 
 import com.ademarporto.ba.model.AccountRequest;
-
 import java.util.UUID;
 
 public interface AccountRequestService {
 
-    AccountRequest createAccountRequest(AccountRequest accountRequest);
+  AccountRequest createAccountRequest(AccountRequest accountRequest);
 
-    AccountRequest updateAccountRequest(AccountRequest accountRequest);
+  AccountRequest updateAccountRequest(AccountRequest accountRequest);
 
-    void deleteAccountRequest(UUID requestId);
+  void deleteAccountRequest(UUID requestId);
 
-    AccountRequest fetchAccountRequestById(UUID requestId);
+  AccountRequest fetchAccountRequestById(UUID requestId);
 
-    void submitAccountRequest(UUID requestId);
-
+  void submitAccountRequest(UUID requestId);
 }

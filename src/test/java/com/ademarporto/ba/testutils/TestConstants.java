@@ -2,7 +2,6 @@ package com.ademarporto.ba.testutils;
 
 import com.ademarporto.ba.model.AccountStatus;
 import com.ademarporto.ba.model.AccountType;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -28,5 +27,4 @@ public class TestConstants {
   public static final String HOUSE_NUMBER = "70";
   public static final String POST_CODE = "1234 AB";
   public static final String CITY = "Amsterdam";
-
 }

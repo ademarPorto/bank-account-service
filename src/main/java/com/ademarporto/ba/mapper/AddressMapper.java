@@ -8,7 +8,7 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.WARN)
 public interface AddressMapper {
 
-    Address toAddressModel(com.ademarporto.ba.rest.spec.AddressDto address);
+  Address toAddressModel(com.ademarporto.ba.rest.spec.AddressDto address);
 
-    AddressEntity toAddressEntity(Address address);
+  AddressEntity toAddressEntity(Address address);
 }

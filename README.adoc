@@ -98,11 +98,9 @@ docker compose -f docker-compose.yml up -d
 
 === Running the application
 After the project has been packaged and Postgres is running, the service can be run by executing the resulting `bank-account-service.jar`
+Expecting that you have a JRE installed, this can be done by running the following command in the root of the project:
 
-Expecting that you have a JRE installed, this can be done with the following command:
-
-* Please provide the absolute path from your application yml,
-in the command below I'm using the path from my local file.
+* Please use the absolute path from your application yml, in the command below I'm using the path from my local file.
 
 [source,shell script]
 ----
@@ -142,6 +140,7 @@ In the root of this project you can find the postman collections containing the 
 covering different scenarios.
 
 == Future Features
+- implement authentication and authorization.
 - Integration with a monitoring provider (the application already provides the metrics via the micrometer library).
 - Implement the endpoints to approve and reject the account requests.
 - Integration with sonar for code quality.

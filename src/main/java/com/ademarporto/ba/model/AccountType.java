@@ -1,7 +1,7 @@
 package com.ademarporto.ba.model;
 
 public enum AccountType {
-    SAVINGS,
-    CURRENT,
-    INVESTMENT;
+  SAVINGS,
+  CURRENT,
+  INVESTMENT;
 }
